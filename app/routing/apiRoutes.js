@@ -8,10 +8,8 @@ module.exports = function(app){
 // This will be used to handle incoming survey results. 
 // This route will also be used to handle the compatibility logic.
 	app.post("/api/friends", function(req,res){
-		if(friendsData.length < 10){
-			friendsData.push(req.body);
-			res.json(true);
-		}
+		friendsData.push(req.body);
+			
 	});
 
 	app.post("/app/clear",function(){

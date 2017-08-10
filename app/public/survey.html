@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Reservation Page</title>
+  <title>Survey</title>
 
   <!-- Latest compiled and minified CSS & JS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
@@ -179,20 +179,20 @@
 
   <script type="text/javascript">
     // Chosen CSS
-    var config = {
-      '.chosen-select'           : {},
-      '.chosen-select-deselect'  : {allow_single_deselect:true},
-      '.chosen-select-no-single' : {disable_search_threshold:10},
-      '.chosen-select-no-results': {no_results_text:'Oops, nothing found!'},
-      '.chosen-select-width'     : {width:"95%"}
-    }
-    for (var selector in config) {
-      $(selector).chosen(config[selector]);
-    }
+    // var config = {
+    //   '.chosen-select'           : {},
+    //   '.chosen-select-deselect'  : {allow_single_deselect:true},
+    //   '.chosen-select-no-single' : {disable_search_threshold:10},
+    //   '.chosen-select-no-results': {no_results_text:'Oops, nothing found!'},
+    //   '.chosen-select-width'     : {width:"95%"}
+    // }
+    // for (var selector in config) {
+    //   $(selector).chosen(config[selector]);
+    // }
     // Capture the form inputs 
     $("#submit").on("click", function(){
       // Form validation
-      function validateForm() {
+      
       var isValid = true;
       $('.form-control').each(function() {
         if ( $(this).val() === '' )
@@ -201,11 +201,11 @@
       $('.chosen-select').each(function() {
         if( $(this).val() === "")
           isValid = false
-      })
-      return isValid;
-    }
+      });
+    
+    
     // If all required fields are filled
-    if (validateForm() == true)
+    if (isValid == true)
     {
       // Create an object for the user's data
         var userData = {
@@ -231,6 +231,7 @@
       
       return false;
     });
+
 </script>
 
 <!-- Modal -->
